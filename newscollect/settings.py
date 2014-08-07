@@ -15,3 +15,9 @@ NEWSPIDER_MODULE = 'newscollect.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'newscollect (+http://www.yourdomain.com)'
+
+ITEM_PIPELINES = {
+    'newscollect.pipelines.DatelessPipeline': 300,
+    'newscollect.pipelines.ParseDatePipeline': 400,
+    'newscollect.pipelines.NewscollectPipeline': 1000
+}
